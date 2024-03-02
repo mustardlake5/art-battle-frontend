@@ -1,5 +1,17 @@
+import Footer from "./page/Footer";
+import Header from "./page/Header";
+import Main from "./page/Main";
+import { Phase } from "./slices/statusSlice";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  const phase = Phase.PURCHASE;
+  return (
+    <div className="flex flex-col h-screen">
+      <Header phase={phase} />
+      <Main phase={phase} />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
