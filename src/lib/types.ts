@@ -57,3 +57,19 @@ export type CreateRoomMessageFromServer = {
   };
 };
 
+export type PurchaseDoneMessageToServer = {
+  type: "purchaseDone";
+  roomIndex: number;
+  roomId: string;
+  roomName: string;
+  user: Required<User>;
+};
+
+export type PurchaseDoneMessageFromServer = {
+  type: "purchaseDone";
+  roomId: string;
+  roomName: string;
+  prepareForBattleDone: boolean;
+  user1: Required<User>;
+  user2: Required<User>;
+};
