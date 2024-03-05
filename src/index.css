@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.checkIconCircle {
+  stroke-dasharray: 250px;
+  animation: circle_move 1s;
+}
+
+.checkIconLine {
+  stroke-dasharray: 65px;
+  animation: line_move 1.5s;
+}
+
+@keyframes circle_move {
+  0% {
+    stroke-dashoffset: 250px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes line_move {
+  0% {
+    stroke-dashoffset: 65px;
+  }
+  60% {
+    stroke-dashoffset: 65px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
