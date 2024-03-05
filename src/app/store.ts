@@ -2,12 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import statusReducer from "../slices/statusSlice";
 import itemsReducer from "../slices/itemsSlice";
 import cartReducer from "../slices/cartSlice";
+import roomReducer from "../slices/roomSlice";
 
 export const store = configureStore({
   reducer: {
     status: statusReducer,
     items: itemsReducer,
     cart: cartReducer,
+    room: roomReducer,
   },
 });
 

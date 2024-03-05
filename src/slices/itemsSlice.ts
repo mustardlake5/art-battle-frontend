@@ -28,9 +28,8 @@ const initialState: ItemsState = {
   },
 };
 
-type BuyItemPayload = {
+type ItemPayload = {
   itemName: keyof PriceList;
-  number: number;
 };
 
 export const itemsSlice = createSlice({
@@ -38,9 +37,15 @@ export const itemsSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    buyItem: (state, { payload }: PayloadAction<BuyItemPayload>) => {
-      const { itemName, number } = payload;
-      state.money -= PRICE_LIST[itemName] * number;
+    buyItem: (state, { payload }: PayloadAction<ItemPayload>) => {
+      const { itemName } = payload;
+      state.items[itemName]++;
+      state.money -= PRICE_LIST[itemName];
+    },
+    returnItem: (state, { payload }: PayloadAction<ItemPayload>) => {
+      const { itemName } = payload;
+      state.items[itemName]--;
+      state.money += PRICE_LIST[itemName];
     },
     useSkill: (state, { payload }: PayloadAction<number>) => {
       state.money -= payload;
@@ -48,7 +53,7 @@ export const itemsSlice = createSlice({
   },
 });
 
-export const { buyItem, useSkill } = itemsSlice.actions;
+export const { buyItem, returnItem, useSkill } = itemsSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectMoney = (state: RootState) => state.items.money;
