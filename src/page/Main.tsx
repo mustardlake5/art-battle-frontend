@@ -12,7 +12,7 @@ type MainProps = {
 const Main = ({ phase }: MainProps) => {
   const { INITIAL, SEARCH_ENEMY, PURCHASE, BATTLE, RESULT } = Phase;
   return (
-    <main className="flex-1">
+    <main className="flex-1 container mx-auto">
       {phase === INITIAL ? (
         <Initial />
       ) : phase === SEARCH_ENEMY ? (
