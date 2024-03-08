@@ -3,25 +3,48 @@ export type RoomState = {
   roomId: string | null;
   roomName: string | null;
   matching: boolean;
+  matchNum: number;
   prepareForBattleDone?: boolean;
+  matchRecord: {
+    win: number;
+    lose: number;
+    draw: number;
+  };
   ownProperty: {
     userType?: "user1" | "user2";
     socketId: string | null;
     userName: string | null;
     purchaseDone?: boolean;
+    artSelectDone?: boolean;
   };
   enemyProperty: {
     userType?: "user1" | "user2";
     socketId: string | null;
     userName: string | null;
     purchaseDone?: boolean;
+    artSelectDone?: boolean;
   };
+  battleResult: "win" | "lose" | "draw" | null;
 };
 
 export type User = {
   socketId: string;
   userName: string;
   purchaseDone?: boolean;
+  artSelectDone?: boolean;
+};
+
+export type ItemList =
+  | "fakePot"
+  | "fakeSculpture"
+  | "fakePainting"
+  | "pot"
+  | "sculpture"
+  | "painting"
+  | "null";
+
+export type ArtSelectedUser = User & {
+  selectedItem: ItemList;
 };
 
 export type MessageFromServer = {
@@ -62,7 +85,7 @@ export type PurchaseDoneMessageToServer = {
   roomIndex: number;
   roomId: string;
   roomName: string;
-  user: Required<User>;
+  user: Omit<Required<User>, "artSelectDone">;
 };
 
 export type PurchaseDoneMessageFromServer = {
@@ -72,4 +95,33 @@ export type PurchaseDoneMessageFromServer = {
   prepareForBattleDone: boolean;
   user1: Required<User>;
   user2: Required<User>;
+};
+
+export type SelectItemDoneMessageToServer = {
+  roomIndex: number;
+  roomId: string;
+  roomName: string;
+  user: Required<ArtSelectedUser>;
+};
+
+export type EitherPlayerSelectDoneMessage = {
+  roomId: string;
+  roomName: string;
+  battleItemSelectDone: boolean;
+  user1: Required<User>;
+  user2: Required<User>;
+};
+
+export type BothPlayerSelectDoneMessage = {
+  roomId: string;
+  roomName: string;
+  battleItemSelectDone: boolean;
+  user1: Required<ArtSelectedUser>;
+  user2: Required<ArtSelectedUser>;
+};
+
+export type BattleResultMessageToServer = {
+  roomIndex: number;
+  roomId: string;
+  roomName: string;
 };
