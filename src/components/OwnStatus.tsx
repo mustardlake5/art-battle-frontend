@@ -46,10 +46,7 @@ const OwnStatus = () => {
 
       <div className="flex flex-col items-end gap-3 mt-2">
         <h3 className="text-lg font-bold">合計：{totalAmount}円</h3>
-        <Button
-          onClick={handlePurchase}
-          disabled={money - totalAmount < 0 || isPurchased}
-        >
+        <Button onClick={handlePurchase} disabled={money < 0 || isPurchased}>
           購入する
         </Button>
       </div>
