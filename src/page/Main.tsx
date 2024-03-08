@@ -1,4 +1,5 @@
 import Battle from "../components/main/Battle";
+import BattleResult from "../components/main/BattleResult";
 import Initial from "../components/main/Initial";
 import Purchase from "../components/main/Purchase";
 import Result from "../components/main/Result";
@@ -10,7 +11,8 @@ type MainProps = {
 };
 
 const Main = ({ phase }: MainProps) => {
-  const { INITIAL, SEARCH_ENEMY, PURCHASE, BATTLE, RESULT } = Phase;
+  const { INITIAL, SEARCH_ENEMY, PURCHASE, BATTLE, BATTLE_RESULT, RESULT } =
+    Phase;
   return (
     <main className="flex-1 container mx-auto">
       {phase === INITIAL ? (
@@ -21,6 +23,8 @@ const Main = ({ phase }: MainProps) => {
         <Purchase />
       ) : phase === BATTLE ? (
         <Battle />
+      ) : phase === BATTLE_RESULT ? (
+        <BattleResult />
       ) : phase === RESULT ? (
         <Result />
       ) : (

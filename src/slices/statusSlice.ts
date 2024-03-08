@@ -5,6 +5,7 @@ export enum Phase {
   SEARCH_ENEMY,
   PURCHASE,
   BATTLE,
+  BATTLE_RESULT,
   RESULT,
 }
 
@@ -34,7 +35,8 @@ export const statusSlice = createSlice({
   initialState,
   reducers: {
     nextPhase: (state) => {
-      const { INITIAL, SEARCH_ENEMY, PURCHASE, BATTLE, RESULT } = Phase;
+      const { INITIAL, SEARCH_ENEMY, PURCHASE, BATTLE, BATTLE_RESULT, RESULT } =
+        Phase;
       switch (state.phase) {
         case INITIAL:
           state.phase = SEARCH_ENEMY;
@@ -46,6 +48,9 @@ export const statusSlice = createSlice({
           state.phase = BATTLE;
           break;
         case BATTLE:
+          state.phase = BATTLE_RESULT;
+          break;
+        case BATTLE_RESULT:
           state.phase = RESULT;
           break;
         case RESULT:

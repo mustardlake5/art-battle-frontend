@@ -6,6 +6,7 @@ type HeaderDesign = {
     | "対戦相手を探しています"
     | "購入フェーズ"
     | "対戦フェーズ"
+    | "試合結果"
     | "対戦結果";
   bgColor: string;
   textColor: string;
@@ -34,6 +35,12 @@ export const createHeaderDesign = (phase: Phase): HeaderDesign => {
     case Phase.BATTLE:
       return {
         title: "対戦フェーズ",
+        bgColor: "bg-violet-600",
+        textColor: "text-white",
+      };
+    case Phase.BATTLE_RESULT:
+      return {
+        title: "試合結果",
         bgColor: "bg-violet-600",
         textColor: "text-white",
       };
