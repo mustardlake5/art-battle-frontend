@@ -3,6 +3,7 @@ import statusReducer from "../slices/statusSlice";
 import itemsReducer from "../slices/itemsSlice";
 import cartReducer from "../slices/cartSlice";
 import roomReducer from "../slices/roomSlice";
+import soundReducer from "../slices/soundSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     items: itemsReducer,
     cart: cartReducer,
     room: roomReducer,
+    sound: soundReducer,
   },
 });
 
