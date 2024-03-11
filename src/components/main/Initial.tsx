@@ -29,7 +29,10 @@ const Initial = () => {
       const { roomIndex, roomId, roomName, matching, user1, user2 } = message;
       console.log("matching success!");
       setIsMatched(true);
-      const setRoomPayload: RoomState = {
+      const setRoomPayload: Omit<
+        RoomState,
+        "matchNum" | "matchRecord" | "battleResult" | "matchResult"
+      > = {
         roomIndex,
         roomId,
         roomName,

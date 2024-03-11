@@ -25,6 +25,7 @@ export type RoomState = {
     artSelectDone?: boolean;
   };
   battleResult: "win" | "lose" | "draw" | null;
+  matchResult: "win" | "lose" | "draw" | null;
 };
 
 export type User = {

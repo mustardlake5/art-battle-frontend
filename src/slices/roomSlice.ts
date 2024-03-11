@@ -25,6 +25,7 @@ const initialState: RoomState = {
     artSelectDone: false,
   },
   battleResult: null,
+  matchResult: null,
 };
 
 export const roomSlice = createSlice({
@@ -53,7 +54,17 @@ export const roomSlice = createSlice({
     setEnemyArtSelectDone: (state, { payload }: PayloadAction<boolean>) => {
       state.enemyProperty.artSelectDone = payload;
     },
-    setRoom: (state, { payload }: PayloadAction<RoomState>) => {
+    setRoom: (
+      state,
+      {
+        payload,
+      }: PayloadAction<
+        Omit<
+          RoomState,
+          "matchNum" | "matchRecord" | "battleResult" | "matchResult"
+        >
+      >
+    ) => {
       const {
         roomIndex,
         roomId,
@@ -80,6 +91,12 @@ export const roomSlice = createSlice({
       state.battleResult = payload;
       state.matchRecord[payload]++;
     },
+    setMatchResult: (
+      state,
+      { payload }: PayloadAction<"win" | "lose" | "draw">
+    ) => {
+      state.matchResult = payload;
+    },
   },
 });
 
@@ -92,6 +109,7 @@ export const {
   setEnemyPurchaseDone,
   setRoom,
   setBattleResult,
+  setMatchResult,
 } = roomSlice.actions;
 
 export default roomSlice.reducer;

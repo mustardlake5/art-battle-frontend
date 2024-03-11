@@ -32,3 +32,40 @@
     stroke-dashoffset: 0px;
   }
 }
+
+#star {
+  transform-origin: center;
+  animation: star 1.7s linear;
+}
+
+@keyframes star {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.drop {
+  transform-origin: 50% 87.88%;
+}
+
+.drop {
+  animation: drop 1s linear;
+}
+
+@keyframes drop {
+  from {
+    transform: rotate(10deg) translateY(-90%) scaleY(1);
+  }
+  to {
+    transform: rotate(10deg) translateY(100%) scaleY(1);
+  }
+}
