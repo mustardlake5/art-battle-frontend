@@ -9,6 +9,8 @@ import { useAppDispatch } from "../../app/hooks";
 import { Phase, jumpPhase } from "../../slices/statusSlice";
 import { setRoom } from "../../slices/roomSlice";
 import Button from "../utils/Button";
+import CustomHowler from "../utils/CustomHowler";
+import InitialSound from "../../assets/bgm/initial/錬金術師の日記_short.mp3";
 
 const Initial = () => {
   const [searching, setSearching] = useState<boolean>(false);
@@ -112,23 +114,26 @@ const Initial = () => {
   }
 
   return (
-    <form onSubmit={handleMatch} className="flex gap-5 mt-5">
-      <input
-        type="text"
-        value={inputUser}
-        onChange={(e) => setInputUser(e.target.value)}
-        className="px-5 border rounded-lg"
-        placeholder="user"
-      />
-      <input
-        type="text"
-        value={inputRoomName}
-        onChange={(e) => setInputRoomName(e.target.value)}
-        className="px-5 border rounded-lg"
-        placeholder="roomName"
-      />
-      <Button type="submit">{searching ? "マッチ中" : "マッチする"}</Button>
-    </form>
+    <>
+      <CustomHowler src={InitialSound} />
+      <form onSubmit={handleMatch} className="flex gap-5 mt-5">
+        <input
+          type="text"
+          value={inputUser}
+          onChange={(e) => setInputUser(e.target.value)}
+          className="px-5 border rounded-lg"
+          placeholder="user"
+        />
+        <input
+          type="text"
+          value={inputRoomName}
+          onChange={(e) => setInputRoomName(e.target.value)}
+          className="px-5 border rounded-lg"
+          placeholder="roomName"
+        />
+        <Button type="submit">{searching ? "マッチ中" : "マッチする"}</Button>
+      </form>
+    </>
   );
 };
 

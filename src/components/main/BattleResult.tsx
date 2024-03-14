@@ -11,6 +11,10 @@ import {
 import { Phase, jumpPhase, nextPhase } from "../../slices/statusSlice";
 import Button from "../utils/Button";
 import { getMatchResult } from "../../lib/getMatchResult";
+import CustomHowler from "../utils/CustomHowler";
+import BattleResultWinSound from "../../assets/bgm/battle/win/角砂糖をもうひとつ_short.mp3";
+import BattleResultLoseSound from "../../assets/bgm/battle/lose/クローズドサークル_short.mp3";
+import BattleResultDrawSound from "../../assets/bgm/battle/even/道化のピアノ_short.mp3";
 
 const BattleResult = () => {
   const {
@@ -56,7 +60,16 @@ const BattleResult = () => {
   }
 
   return (
-    <div>
+    <>
+      <CustomHowler
+        src={
+          battleResult === "win"
+            ? BattleResultWinSound
+            : battleResult === "lose"
+            ? BattleResultLoseSound
+            : BattleResultDrawSound
+        }
+      />
       <div className="container h-[80vh] grid place-items-center">
         <div className="w-full flex flex-col items-center gap-10">
           <div className="w-full flex justify-center gap-24">
@@ -82,7 +95,7 @@ const BattleResult = () => {
           <Button onClick={handleNextGame}>次のゲームへ</Button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

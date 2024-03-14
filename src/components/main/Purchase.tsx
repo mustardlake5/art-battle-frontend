@@ -5,6 +5,8 @@ import { PurchaseDoneMessageFromServer } from "../../lib/types";
 import { setEnemyPurchaseDone } from "../../slices/roomSlice";
 import PurchaseCard from "../PurchaseCard";
 import { nextPhase } from "../../slices/statusSlice";
+import CustomHowler from "../utils/CustomHowler";
+import PurchaseSound from "../../assets/bgm/purchase/存在しない街_short.mp3";
 
 const Purchase = () => {
   const room = useAppSelector((state) => state.room);
@@ -55,9 +57,10 @@ const Purchase = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <CustomHowler src={PurchaseSound} />
       <PurchaseCard />
-    </div>
+    </>
   );
 };
 

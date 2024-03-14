@@ -10,6 +10,8 @@ import {
 } from "../../lib/types";
 import { judgeBattleResult } from "../../lib/judgeBattleResult";
 import { enemyUseItem } from "../../slices/itemsSlice";
+import BattleSound from "../../assets/bgm/battle/evenSituation/ここだけの話_short.mp3";
+import CustomHowler from "../utils/CustomHowler";
 
 const BATTLE_EVENT = {
   eitherPlayerSelectDone: "eitherPlayerSelectDone",
@@ -70,7 +72,12 @@ const Battle = () => {
     };
   }, []);
 
-  return <BattleSelectItem />;
+  return (
+    <>
+      <CustomHowler src={BattleSound} />
+      <BattleSelectItem />
+    </>
+  );
 };
 
 export default Battle;
