@@ -72,14 +72,18 @@ const BattleResult = () => {
       />
       <div className="container h-[80vh] grid place-items-center">
         <div className="w-full flex flex-col items-center gap-10">
-          <div className="w-full flex justify-center gap-24">
+          <div className="w-full flex justify-center gap-7 sm:gap-24">
             <div className="w-1/3 flex flex-col items-end gap-7">
-              <h3 className="text-xl">あなたの選択した作品</h3>
-              <span className="text-3xl">{selectedItemName}</span>
+              <h3 className="text-xl">選択した作品</h3>
+              <span className="text-2xl sm:text-3xl font-bold">
+                {selectedItemName}
+              </span>
             </div>
             <div className="w-1/3 flex flex-col items-start gap-7">
-              <h3 className="text-xl">相手の選択した作品</h3>
-              <span className="text-3xl">{enemySelectedItemName}</span>
+              <h3 className="text-xl">相手の作品</h3>
+              <span className="text-2xl sm:text-3xl font-bold">
+                {enemySelectedItemName}
+              </span>
             </div>
           </div>
 

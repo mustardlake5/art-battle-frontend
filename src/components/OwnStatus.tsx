@@ -38,14 +38,16 @@ const OwnStatus = () => {
       <div className="flex justify-around">
         <h3 className="text-lg font-bold">商品一覧</h3>
         <h3 className={`text-lg font-bold ${money < 0 && "text-red-500"}`}>
-          残高：{money}円
+          残高：{money === 0 ? money : `${money}万`}円
         </h3>
       </div>
 
       <ItemList />
 
       <div className="flex flex-col items-end gap-3 mt-2">
-        <h3 className="text-lg font-bold">合計：{totalAmount}円</h3>
+        <h3 className="text-lg font-bold">
+          合計：{totalAmount === 0 ? totalAmount : `${totalAmount}万`}円
+        </h3>
         <Button onClick={handlePurchase} disabled={money < 0 || isPurchased}>
           購入する
         </Button>

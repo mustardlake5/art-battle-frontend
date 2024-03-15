@@ -20,7 +20,7 @@ type ItemsState = {
 
 // Define the initial state using that type
 const initialState: ItemsState = {
-  money: 2000,
+  money: 1000,
   items: {
     fakePot: 0,
     fakeSculpture: 0,

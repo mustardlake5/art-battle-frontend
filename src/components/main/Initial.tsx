@@ -116,22 +116,27 @@ const Initial = () => {
   return (
     <>
       <CustomHowler src={InitialSound} />
-      <form onSubmit={handleMatch} className="flex gap-5 mt-5">
+      <form
+        onSubmit={handleMatch}
+        className="flex flex-col sm:flex-row gap-8 sm:gap-5 mt-10 sm:mt-5"
+      >
         <input
           type="text"
           value={inputUser}
           onChange={(e) => setInputUser(e.target.value)}
-          className="px-5 border rounded-lg"
-          placeholder="user"
+          className="mx-5 sm:mx-0 p-5 border rounded-lg"
+          placeholder="プレイヤー名"
         />
         <input
           type="text"
           value={inputRoomName}
           onChange={(e) => setInputRoomName(e.target.value)}
-          className="px-5 border rounded-lg"
-          placeholder="roomName"
+          className="mx-5 sm:mx-0 p-5 border rounded-lg"
+          placeholder="部屋名"
         />
-        <Button type="submit">{searching ? "マッチ中" : "マッチする"}</Button>
+        <Button type="submit" className="mx-5 sm:mx-0">
+          {searching ? "マッチ中" : "マッチする"}
+        </Button>
       </form>
     </>
   );
