@@ -45,7 +45,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen h-dvh">
       {phase === Phase.INITIAL && displayModal && (
         <NoticeModal setDisplayModal={setDisplayModal} />
       )}

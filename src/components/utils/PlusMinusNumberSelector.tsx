@@ -13,21 +13,23 @@ const PlusMinusNumberSelector = ({
   displayNum,
 }: PlusMinusNumberSelectorProps) => {
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="w-2/6 flex items-center justify-center gap-2">
       <button
-        className="h-6 w-6 rounded-full grid place-items-center border border-stone-900 hover:bg-stone-300"
+        className="h-8 w-8 rounded-full grid place-items-center border border-stone-900 hover:bg-stone-300"
         onClick={handleMinusClick}
         disabled={displayNum === 0}
       >
-        <Minus className="h-4 w-4" />
+        <Minus className="h-5 w-5" />
       </button>
-      <div className="text-3xl font-bold tracking-tighter">{displayNum}</div>
+      <div className="w-8 text-center text-3xl font-bold tracking-tighter">
+        {displayNum}
+      </div>
       <button
-        className="h-6 w-6 rounded-full grid place-items-center border border-stone-900 hover:bg-stone-300"
+        className="h-8 w-8 rounded-full grid place-items-center border border-stone-900 hover:bg-stone-300"
         onClick={handlePlusClick}
         disabled={false}
       >
-        <Plus className="h-4 w-4" />
+        <Plus className="h-5 w-5" />
       </button>
     </div>
   );
