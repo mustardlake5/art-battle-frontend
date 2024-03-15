@@ -1,5 +1,5 @@
 import CustomHowler from "../../utils/CustomHowler";
-import ResultDrawSound from "../../../assets/bgm/result/draw/それぞれの帰り道_short.mp3";
+import ResultDrawSound from "../../../assets/bgm/result/draw/draw_short.mp3";
 import ResultMatchRecord from "./ResultMatchRecord";
 
 const ResultDraw = () => {

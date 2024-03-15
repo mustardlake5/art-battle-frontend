@@ -12,9 +12,9 @@ import { Phase, jumpPhase, nextPhase } from "../../slices/statusSlice";
 import Button from "../utils/Button";
 import { getMatchResult } from "../../lib/getMatchResult";
 import CustomHowler from "../utils/CustomHowler";
-import BattleResultWinSound from "../../assets/bgm/battle/win/角砂糖をもうひとつ_short.mp3";
-import BattleResultLoseSound from "../../assets/bgm/battle/lose/クローズドサークル_short.mp3";
-import BattleResultDrawSound from "../../assets/bgm/battle/even/道化のピアノ_short.mp3";
+import BattleResultWinSound from "../../assets/bgm/battle/win/win_short.mp3";
+import BattleResultLoseSound from "../../assets/bgm/battle/lose/lose_short.mp3";
+import BattleResultDrawSound from "../../assets/bgm/battle/even/even_short.mp3";
 
 const BattleResult = () => {
   const {

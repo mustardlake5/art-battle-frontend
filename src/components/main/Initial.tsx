@@ -10,7 +10,7 @@ import { Phase, jumpPhase } from "../../slices/statusSlice";
 import { setRoom } from "../../slices/roomSlice";
 import Button from "../utils/Button";
 import CustomHowler from "../utils/CustomHowler";
-import InitialSound from "../../assets/bgm/initial/錬金術師の日記_short.mp3";
+import InitialSound from "../../assets/bgm/initial/initial_short.mp3";
 
 const Initial = () => {
   const [searching, setSearching] = useState<boolean>(false);

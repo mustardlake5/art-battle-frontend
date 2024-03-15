@@ -1,6 +1,6 @@
 import CustomHowler from "../../utils/CustomHowler";
 import StarBox from "../../utils/StarBox";
-import ResultWinSound from "../../../assets/bgm/result/win/カラフルな生活_short.mp3";
+import ResultWinSound from "../../../assets/bgm/result/win/win_short.mp3";
 import ResultMatchRecord from "./ResultMatchRecord";
 
 const ResultWin = () => {

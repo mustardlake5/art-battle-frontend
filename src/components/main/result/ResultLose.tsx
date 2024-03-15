@@ -1,6 +1,6 @@
 import CustomHowler from "../../utils/CustomHowler";
 import RainBox from "../../utils/RainBox";
-import ResultLoseSound from "../../../assets/bgm/result/lose/憂愁_short.mp3";
+import ResultLoseSound from "../../../assets/bgm/result/lose/lose_short.mp3";
 import ResultMatchRecord from "./ResultMatchRecord";
 
 const ResultLose = () => {

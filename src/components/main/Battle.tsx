@@ -10,7 +10,7 @@ import {
 } from "../../lib/types";
 import { judgeBattleResult } from "../../lib/judgeBattleResult";
 import { enemyUseItem } from "../../slices/itemsSlice";
-import BattleSound from "../../assets/bgm/battle/evenSituation/ここだけの話_short.mp3";
+import BattleSound from "../../assets/bgm/battle/evenSituation/even_short.mp3";
 import CustomHowler from "../utils/CustomHowler";
 
 const BATTLE_EVENT = {
